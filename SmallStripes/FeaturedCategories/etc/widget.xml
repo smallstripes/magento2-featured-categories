@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="smallstripes_featured_categories"
+            class="SmallStripes\FeaturedCategories\Block\Widget\FeaturedCategories" is_email_compatible="true"
+            placeholder_image="Magento_Catalog::images/product_widget_new.png" ttl="86400">
+        <label translate="true">Featured Category</label>
+        <description translate="true">Show featured categories</description>
+        <parameters>
+            <parameter name="id_path" xsi:type="block" visible="true" required="false" sort_order="10">
+                <label translate="true">Category</label>
+                <block class="Magento\Catalog\Block\Adminhtml\Category\Widget\Chooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string" translate="true">Select Category...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+            <parameter name="categories" xsi:type="text" visible="true" required="true" sort_order="20">
+                <label translate="true">Categories</label>
+                <description translate="true">Categories coma separated</description>
+            </parameter>
+            <parameter name="photos" xsi:type="text" visible="true" required="true" sort_order="20">
+                <label translate="true">Photos</label>
+                <description translate="true">Category photos</description>
+            </parameter>
+            <parameter name="discounts" xsi:type="text" required="false" visible="true" sort_order="30">
+                <label translate="true">Discounts</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

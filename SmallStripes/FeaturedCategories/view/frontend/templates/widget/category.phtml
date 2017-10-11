@@ -1,0 +1,18 @@
+<div class="home-group-wrap home-categories">
+    <?php foreach ($this->getFeaturedCategories() as $cat): ?>
+        <div class="home-cat-wrap">
+            <a href="<?php echo $cat->getUrl() ?>">
+                <img src="<?php echo $block->getViewFileUrl('SmallStripes_Homepage::images/' . $cat->getFeaturedImage()); ?>"
+                     alt=""/>
+            </a>
+            <div class="home-sub-wrap">
+                <h2><a href="<?php echo $cat->getUrl() ?>"><?php echo $cat->getName() ?></a></h2>
+            </div>
+            <?php
+            if (null != $cat->getDiscount() && !empty($cat->getDiscount())) {
+                echo '<span class="discount-badge">' . $cat->getDiscount() . '%</span>';
+            }
+            ?>
+        </div>
+    <?php endforeach; ?>
+</div>
